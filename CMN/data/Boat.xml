@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <boat>
+    <id>NND2</id>
+    <name>Naoned II</name>
+    <description>Mag 13 mis à l'eau 1986, ce sloop en aluminium est équipé d'une barre à roue très agréable. C'est le bateau idéal pour des croisières hauturières en toute sécurité. Il possède toute l'électronique moderne avec Traceur informatique, radar, VHF, GPS, BLU, Navtex, etc... Il est doté de couchettes confortables, d'équipets individuels, d'une cuisine fonctionnelle et d'un cabinet de toilette avec eau chaude.</description>
+    <dateBuild>1986-01-01</dateBuild>
+    <dateEntryClub>1986-01-01</dateEntryClub>
+    <crewMax>8</crewMax> 
+    <minSkypperRankId>MER</minSkypperRankId>
+    <photo>nnd2_1.jpg</photo>
+    <stateId>A</stateId>
+    <timeStamp>2016-02-18 20:37:22.193</timeStamp>
+  </boat>
+  <boat>
+    <id>TLNND</id>
+    <name>Telenn Du</name>
+    <description>Lancé en 2010, ce biquille en aluminium est un bateau solide et bon marcheur.Très sécurisant, confortable et bien équipé, il se prête aussi bien à la croisière semi-hauturière qu'aux échouages dans les rias bretonnes.</description>
+    <dateBuild>2010-01-01</dateBuild>
+    <dateEntryClub>2010-01-01</dateEntryClub>
+    <crewMax>6</crewMax>
+    <minSkypperRankId>MER</minSkypperRankId>
+    <photo>tlnnd_1.jpg</photo>
+    <stateId>A</stateId>
+    <timeStamp>2016-02-18 20:37:22.193</timeStamp>
+  </boat>
+  <boat>
+    <id>KNLKR3</id>
+    <name>Keneil Ker III</name>
+    <description>Ce JPK de 9,60m de 2005, est un bateau rapide et confortable conçu pour la régate. Son vaste cockpit accueille tout l'équipage et son carré lumineux rend les escales très agréables. Il est performant en course-croisière.</description>
+    <dateBuild>2005-01-01</dateBuild>
+    <dateEntryClub>2005-01-01</dateEntryClub>
+    <crewMax>6</crewMax>
+    <minSkypperRankId>MER</minSkypperRankId>
+    <photo>knlkr3_1.jpg</photo>
+    <stateId>A</stateId>
+    <timeStamp>2016-02-18 20:37:22.193</timeStamp>
+  </boat>
+  <boat>
+    <id>VLG</id>
+    <name>Avelig</name>
+    <description>Sorti neuf des chantiers, ce Sun Odyssey 30i Performance a rejoint la flotte du club en mai 2009. Moderne, confortable et bien accastillé, c'est le bateau idéal pour les débutants.</description>
+    <dateBuild>2009-01-01</dateBuild>
+    <dateEntryClub>2009-01-01</dateEntryClub>
+    <crewMax>6</crewMax>
+    <minSkypperRankId>MER</minSkypperRankId>
+    <photo>vlg_1.jpg</photo>
+    <stateId>A</stateId>
+    <timeStamp>2016-02-18 20:37:22.193</timeStamp>
+  </boat>
+</root>

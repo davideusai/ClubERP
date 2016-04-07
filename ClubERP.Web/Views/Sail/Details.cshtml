@@ -1,0 +1,119 @@
+﻿@model ClubERP.DAO.Sail
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "";
+}
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("Référence")
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+
+        <dt>
+           @Html.DisplayName("Date de départ")
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DepartureDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Date d'arrivée")
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ArrivalDate)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayName("Port de départ")
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DeparturePort.Name)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayName("Port d'arrivée")
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ArrivalPort.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Bateau")
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Boat.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Mode de navigation")
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SailingMode.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Prix")
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Commentaire")
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Commentary)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Statut")
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.State.Name)
+        </dd>
+        @*<dt>
+            @Html.DisplayNameFor(model => model.TimeStamp)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TimeStamp)
+        </dd>*@
+    </dl>
+</div>
+
+@*<div>
+    <p>
+        @Html.ActionLink("Create New", "Create", "Crew", new { id = Model.Id }, new { data_modal = "" })
+    </p>
+    <table class="table">
+        <tr>
+            <th>Prénom</th>
+            <th>Rôle</th>
+            <th></th>
+        </tr>
+        @foreach (var item in Model.Crew)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => item.User.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Role.Name)
+                </td>
+                <td></td>
+            </tr>
+        }
+    </table>
+</div>*@
+@Html.Partial("CrewList", Model)
+<p>
+    @Html.ActionLink("Editer", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Retour à la liste", "Index")
+</p>

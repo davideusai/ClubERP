@@ -1,0 +1,37 @@
+﻿@model  ClubERP.DAO.Sail
+@{
+    ViewBag.Title = "Crew";
+    Layout = "";
+}
+
+<div>
+    
+    <table class="table">
+        <tr>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Rôle</th>
+            <th></th>
+        </tr>
+        @foreach (var item in Model.Crew)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => item.User.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.User.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Role.Name)
+                </td>
+                <td>
+                    @Html.ActionLink("Modifier", "Edit", "Crew", new { id = item.Id }, htmlAttributes: new { data_modal = "" })
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+<p>
+    @Html.ActionLink("Ajouter", "Add", "Crew", new { id = Model.Id } , htmlAttributes : new { data_modal = "" })
+</p>

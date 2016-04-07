@@ -1,0 +1,113 @@
+﻿@model IEnumerable<ClubERP.DAO.Sail>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    List<ClubERP.DAO.Boat> boatList = ClubERP.ORM.Boat.List();
+    List<ClubERP.DAO.SailingMode> sailingModeList = ClubERP.ORM.SailingMode.List();
+}
+<p>
+    <h2>Mes souhaits</h2>
+</p>
+@using (Html.BeginForm("Index", "Sail", FormMethod.Get))
+{
+    <div class="form-inline">
+        @Html.DropDownList("boatId", new SelectList(boatList, "Id", "Name"), "--- Choisis le bateau ---", htmlAttributes: new { @class = "form-control" })
+        @Html.DropDownList("SailingModeId", new SelectList(sailingModeList, "Id", "Name"), "--- Pour quoi faire ---", htmlAttributes: new { @class = "form-control" })
+        @Html.TextBox("departureDate", DateTime.Now.ToShortDateString(), htmlAttributes: new { @class = "form-control datepicker" })
+        <input type="submit" value="Rechercher" class="btn btn-default" />
+      </div>
+}
+
+<h2>Liste des navigations</h2>
+
+<p>
+    @Html.ActionLink("Créer une navigation", "Create")
+</p>
+<table class="table">
+    @*<tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DepartureDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ArrivalDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeparturePort.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ArrivalPort.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Boat.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th></th>
+        </tr>*@
+    <tr>
+        <th>
+            @Html.DisplayName("Date de départ")
+        </th>
+        <th>
+            @Html.DisplayName("Date d'arrivée")
+        </th>
+        <th>
+            @Html.DisplayName("Port de départ")
+        </th>
+        <th>
+            @Html.DisplayName("Port d'arrivée")
+        </th>
+        <th>
+            @Html.DisplayName("Bateau")
+        </th>
+        <th>
+            @Html.DisplayName("Mode")
+        </th>
+        <th>
+            @Html.DisplayName("Prix")
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DepartureDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ArrivalDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DeparturePort.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ArrivalPort.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Boat.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SailingMode.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.ActionLink("Détails", "Details", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript">
+        $(function () { // will trigger when the document is ready
+            $('.datepicker').datepicker({
+                format: 'dd/mm/yyyy'
+            }); //Initialise any date pickers
+        });
+    </script>
+}

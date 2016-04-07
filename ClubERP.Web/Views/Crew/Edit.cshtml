@@ -1,0 +1,42 @@
+﻿@model ClubERP.DAO.Crew
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "";
+    List<ClubERP.DAO.State> stateList = ClubERP.ORM.State.List();
+    List<ClubERP.DAO.Role> roleList = ClubERP.ORM.Role.List();
+}
+
+<h2>Bientôt à bord!</h2>
+<hr />
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="modal-body">
+        <div class="form-horizontal">
+            <div class="form-group">
+                @Html.LabelFor(model => model.Role.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownListFor(model => model.Role.Id, new SelectList(roleList, "Id", "Name"), htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Role.Id, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.State.Id, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownListFor(model => model.State.Id, new SelectList(stateList, "Id", "Name"), htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.State.Id, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <div class="col-md-offset-2 col-md-10">
+            <button class="btn" data-dismiss="modal">Annuler</button>
+            <input type="submit" value="Valider" class="btn btn-default" />
+        </div>
+    </div>
+
+}
